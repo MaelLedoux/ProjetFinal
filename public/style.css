@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-image: url('/images/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #2a4b9a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: ease-in-out 0.3s;
+}
+
+
+
+section {
+    padding: 50px;
+}
+
+.intro {
+    display: block;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1b1e39;
+    color: white;
+    padding: 50px 80px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.8;
+    box-shadow: #222 0 0 10px;
+}
+
+.intro titre {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 10px;
+    color: #2a4b9a;
+}
+
+#projet1 {
+    background-image: url('/images/projet1.jpg');
+    background-size: cover;
+}
+
+#projet2 {
+    background-image: url('/images/projet2.jpg');
+    background-size: cover;
+}
+
+#projet3 {
+    background-image: url('/images/projet3.png');
+    background-size: cover;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+#contact input,
+textarea,
+button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#contact button:hover {
+    background-color: #444;
+    transition: ease-in-out 0.3s;
+}
+
+favicon.png {
+    background-color: #222;
+}
+
+#services p {
+    font-size: 16px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    padding: 20px;
+}

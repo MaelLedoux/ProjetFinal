@@ -41,7 +41,48 @@ nav ul li a:hover {
     transition: ease-in-out 0.3s;
 }
 
+/* === BARRE DE RECHERCHE INTEGREE === */
+.search-item {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
 
+#searchForm {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    display: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2); /* transparence */
+    color: white;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    width: 0;
+    opacity: 0;
+}
+
+#searchForm.active #searchInput {
+    display: block;
+    width: 150px;
+    opacity: 1;
+    margin-left: 10px;
+}
+
+#searchToggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+}
+
+/* ============================ */
 
 section {
     padding: 50px;
@@ -59,7 +100,7 @@ section {
     box-shadow: #222 0 0 10px;
 }
 
-.intro titre {
+.intro h2 {
     font-size: 20px;
     text-transform: uppercase;
 }

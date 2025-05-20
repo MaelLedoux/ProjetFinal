@@ -11,48 +11,61 @@
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="D:\Code\Projet final\favicon\favicon.png">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <header>    
+    <header>
         <h1>MH Déco - Mareva MARTY</h1>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="search-item">
-                    <a href="javascript:void(0);" id="searchToggle">
-                        <i class="fa fa-search"></i> Recherche
-                    </a>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="search-item" id="searchItem">
+                    <form id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Rechercher...">
+                        <button type="button" id="searchToggle">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
                 </li>
+
             </ul>
         </nav>
     </header>
-    
+
     <section id="home">
         <div class="intro">
-            <titre>mareva marty, votre architecte d'intérieur <br><br>décoratrice à montauban</titre><br>
+            <h2>mareva marty, votre architecte d'intérieur <br><br>décoratrice à montauban</h2><br>
             <br>
             <hr style="width: 30%; position: relative; right: 35%;">
             <br>
-            Métamorphoser vos espaces afin de créer une bulle de bien-être dans votre vie : telle est mon ambition à vos côtés !<br>
+            Métamorphoser vos espaces afin de créer une bulle de bien-être dans votre vie : telle est mon ambition à vos
+            côtés !<br>
             <br>
-            Architecte d’intérieur décoratrice installée à Montauban, je vous conseille et vous accompagne pour exaucer vos souhaits d’intérieur unique dans le Tarn-et-Garonne, de Castelsarrasin à Caussade, en passant par Moissac, Montech…<br>
+            Architecte d’intérieur décoratrice installée à Montauban, je vous conseille et vous accompagne pour exaucer
+            vos souhaits d’intérieur unique dans le Tarn-et-Garonne, de Castelsarrasin à Caussade, en passant par
+            Moissac, Montech…<br>
             <br>
-            Du « simple » conseil à la réalisation intégrale de votre projet, vous verrez vos envies prendre vie à travers des plans et des modélisations à 360°, comme si vous y étiez !<br>
+            Du « simple » conseil à la réalisation intégrale de votre projet, vous verrez vos envies prendre vie à
+            travers des plans et des modélisations à 360°, comme si vous y étiez !<br>
             <br>
-            Imaginons et réalisons ensemble votre intérieur de demain…</div>
+            Imaginons et réalisons ensemble votre intérieur de demain…
+        </div>
     </section>
 
     <section id="portfolio">
         <h2>Mes dernières réalisations</h2>
         <div class="gallery">
-            <div class="project" id="projet1">Un appartement chaleureux - Montbeton (82)</div> <!-- Trouver un moyen de mettre une photo du projet en background -->
-            <div class="project" id="projet2">Transformation d'une kitechenette en cuisine - Montauban (82)</div>
+            <div class="project" id="projet1">Un appartement chaleureux - Montbeton (82)</div>
+            <div class="project" id="projet2">Transformation d'une kitchenette en cuisine - Montauban (82)</div>
             <div class="project" id="projet3">Une pièce de vie contemporaine aux accents naturels - Montauban (82)</div>
         </div>
     </section>

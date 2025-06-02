@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - MH Déco</title>
+    <title>Services - MH Interior</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
@@ -11,12 +12,15 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>MH Déco - Mareva MARTY</h1>
+        <h1>MH Interior - Mareva MARTY</h1>
         <nav>
             <ul>
-                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="index.html"
+                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -31,8 +35,58 @@
     </header>
 
     <section id="services">
-        <h2>Nos services</h2>
-        <p>Aménagement, rénovation, décoration d’intérieur d’appartements et de maisons à Montauban</p>
+        <h2>Mes services</h2>
+        <div class="services-wrapper">
+            <div class="service">
+                <span class="icon">🖋️</span>
+                <h3>Esquisses à la main</h3>
+                <p>Chaque projet débute par un croquis dessiné à la main pour traduire avec sensibilité vos envies, vos
+                    goûts et l’identité de votre lieu.</p>
+            </div>
+            <div class="service">
+                <span class="icon">🖥️</span>
+                <h3>Visualisation 3D réaliste</h3>
+                <p>Grâce à des vues 3D immersives, vous visualisez votre futur intérieur comme si vous y étiez, avant
+                    même le début des travaux.</p>
+            </div>
+            <div class="service">
+                <span class="icon">🤝</span>
+                <h3>Accompagnement sur mesure</h3>
+                <p>Du simple conseil déco à la rénovation complète, je vous accompagne à chaque étape, selon vos besoins
+                    et votre budget.</p>
+            </div>
+            <div class="service">
+                <span class="icon">🛠️</span>
+                <h3>Coordination de projet</h3>
+                <p>Je sélectionne des artisans de confiance et assure la coordination pour garantir un rendu final
+                    fidèle à votre vision.</p>
+            </div>
+        </div>
     </section>
+
+    <footer>
+        <img src="favicon/favicon-96x96.png" alt="MH Interior Logo">
+        <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
+        <p>Suivez-moi sur les réseaux sociaux :</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
+                    <img src="icons/Facebook.svg" alt="Facebook" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
+                    <img src="icons/Instagram.png" alt="Instagram" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
+                    <img src="icons/Linkedin.png" alt="LinkedIn" />
+                </a>
+            </li>
+        </ul>
+
+    </footer>
 </body>
+
 </html>

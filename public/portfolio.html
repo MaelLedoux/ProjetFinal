@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - MH Déco</title>
+    <title>Portfolio - MH Interior</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
@@ -11,12 +12,15 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>MH Déco - Mareva MARTY</h1>
+        <h1>MH Interior - Mareva MARTY</h1>
         <nav>
             <ul>
-                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="index.html"
+                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -38,5 +42,47 @@
             <div class="project" id="projet3">Une pièce de vie contemporaine aux accents naturels - Montauban (82)</div>
         </div>
     </section>
+
+    <section id="dessins">
+        <h2>Mes dessins</h2>
+        <div class="drawings">
+            <div class="drawing" id="dessin1">Dessin 1 - Esquisse d'un salon moderne</div>
+            <div class="drawing" id="dessin2">Dessin 2 - Plan d'une cuisine fonctionnelle</div>
+            <div class="drawing" id="dessin3">Dessin 3 - Aménagement d'une chambre cosy</div>
+        </div>
+    </section>
+
+    <section id="peintures">
+        <h2>Mes peintures</h2>
+        <div class="paintings">
+            <div class="painting" id="peinture1">Peinture 1 - Nature morte contemporaine</div>
+            <div class="painting" id="peinture2">Peinture 2 - Abstraction colorée</div>
+            <div class="painting" id="peinture3">Peinture 3 - Paysage urbain</div>
+        </div>
+    </section>
+    <footer>
+        <img src="favicon/favicon-96x96.png" alt="MH Interior Logo">
+        <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
+        <p>Suivez-moi sur les réseaux sociaux :</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
+                    <img src="icons/Facebook.svg" alt="Facebook" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
+                    <img src="icons/Instagram.png" alt="Instagram" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
+                    <img src="icons/Linkedin.png" alt="LinkedIn" />
+                </a>
+            </li>
+        </ul>
+
+    </footer>
 </body>
+
 </html>

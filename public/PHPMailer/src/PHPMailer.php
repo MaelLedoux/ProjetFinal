@@ -1,1 +1,0 @@
-<?php namespace PHPMailer\PHPMailer; class PHPMailer { public function __call($name,$args){} } ?>

@@ -41,12 +41,14 @@
 
         <div class="contact-flex">
             <form action="send_contact.php" method="POST" id="contactForm">
-                <input type="text" placeholder="Votre Nom" required>
-                <input type="email" placeholder="Votre Email" required>
-                <input type="text" placeholder="Votre Téléphone" required>
-                <textarea placeholder="Votre Message" required></textarea>
+                <input type="text" name="nom" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre Email" required>
+                <input type="text" name="telephone" placeholder="Votre Téléphone">
+                <textarea name="message" placeholder="Votre Message" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
+
+
 
             <div class="map-container">
                 <h2>Où me trouver</h2>

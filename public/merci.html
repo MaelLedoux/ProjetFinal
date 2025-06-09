@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Merci pour votre message</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Interior - Merci !</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Polices et icônes identiques à index.html -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -16,18 +25,25 @@
         <h1>MH Interior - Mareva MARTY</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html"
+                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">À propos</a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="background-color:#1b1e39; color:white; font-family:'Montserrat', sans-serif; text-align:center; padding:80px 20px;">
+    <main
+        style="background-color:#1b1e39; color:white; font-family:'Montserrat', sans-serif; text-align:center; padding:80px 20px;">
         <h1 style="font-size: 48px; margin-bottom: 20px;">Merci !</h1>
-        <p style="font-size: 20px; max-width: 600px; margin: 0 auto 40px;">Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.</p>
-        <a href="index.html" style="display: inline-block; padding: 12px 25px; background-color: #2a4b9a; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Retour à l'accueil</a>
+        <p style="font-size: 20px; max-width: 600px; margin: 0 auto 40px;">Votre message a bien été envoyé. Je vous
+            répondrai dans les plus brefs délais.</p>
+        <a href="index.html"
+            style="display: inline-block; padding: 12px 25px; background-color: #2a4b9a; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Retour
+            à l'accueil</a>
     </main>
 
     <footer>
@@ -35,11 +51,15 @@
         <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
         <p>Suivez-moi sur les réseaux sociaux :</p>
         <ul class="social-links">
-            <li><a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank"><img src="icons/Facebook.svg" alt="Facebook"></a></li>
-            <li><a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank"><img src="icons/Instagram.png" alt="Instagram"></a></li>
-            <li><a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank"><img src="icons/Linkedin.png" alt="LinkedIn"></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank"><img
+                        src="icons/Facebook.svg" alt="Facebook"></a></li>
+            <li><a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank"><img
+                        src="icons/Instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank"><img
+                        src="icons/Linkedin.png" alt="LinkedIn"></a></li>
         </ul>
     </footer>
 
 </body>
+
 </html>

@@ -25,6 +25,14 @@ header {
     z-index: 1;
 }
 
+header.no-banner {
+    background-image: none;
+    height: auto;
+    background-color: rgba(27, 30, 57, 0.9);
+    box-shadow: #1b1e39 0 0 10px;
+    transition: all 0.3s ease-in-out;
+}
+
 nav {
     background-color: transparent;
     padding: 10px 0;
@@ -37,7 +45,7 @@ nav.sticky-nav {
     top: 0;
     width: auto;
     background-color: rgba(27, 30, 57, 0.6);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
     transition: all 0.6s ease-in-out;
@@ -154,6 +162,7 @@ section {
     font-size: 18px;
     font-weight: bold;
 }
+
 .gallery a:hover {
     color: #1b1e39;
     text-decoration: underline;
@@ -336,3 +345,74 @@ footer p {
     transform: scale(1.1);
 }
 
+#about h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 50px;
+
+}
+
+.about-text {
+    flex: 1 1 35%;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    line-height: 1.6;
+}
+
+.about-text hr {
+    border: none;
+    border-top: 2px solid #1b1e39;
+    margin: 20px 0;
+}
+
+.about-text h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        flex: 1 1 100%;
+    }
+}

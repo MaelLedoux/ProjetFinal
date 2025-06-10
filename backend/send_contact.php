@@ -1,10 +1,10 @@
 <?php
-// 🔍 Affiche les erreurs PHP
+// Affiche les erreurs PHP
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// 📦 PHPMailer
+// PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -13,7 +13,7 @@ require 'PHP_mailer/src/PHPMailer.php';
 require 'PHP_mailer/src/SMTP.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 🔐 Connexion MySQL
+    // Connexion MySQL
     $host = 'localhost';
     $dbname = 'portfolio_db';
     $username = 'maelledoux';
@@ -26,18 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erreur connexion base : " . $e->getMessage());
     }
 
-    // 📨 Récupération des champs
+    // Récupération des champs
     $nom = $_POST['nom'] ?? '';
     $email = $_POST['email'] ?? '';
     $telephone = $_POST['telephone'] ?? '';
     $message = $_POST['message'] ?? '';
 
-    // 📋 Affiche les données reçues pour test
+    // Affiche les données reçues pour test
     echo "<pre>";
     var_dump($_POST);
     echo "</pre>";
 
-    // 🔐 Vérifie champs requis
+    // Vérifie champs requis
     if (!empty($nom) && !empty($email) && !empty($message)) {
         try {
             // 💾 Enregistre dans la base (remplacement de null par '')

@@ -1,3 +1,4 @@
+/* === BASE === */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,8 @@ body {
     color: #333;
 }
 
+
+/* === HEADER === */
 header h1 {
     color: white;
     font-size: 45px;
@@ -21,7 +24,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     z-index: 1;
 }
 
@@ -30,13 +33,15 @@ header.no-banner {
     height: auto;
     background-color: rgba(27, 30, 57, 0.9);
     box-shadow: #1b1e39 0 0 10px;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
+
+/* === NAVIGATION === */
 nav {
     background-color: transparent;
     padding: 10px 0;
-    transition: all 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
     z-index: 1000;
 }
 
@@ -48,7 +53,7 @@ nav.sticky-nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
-    transition: all 0.6s ease-in-out;
+    transition: background-color 0.6s ease-in-out;
 }
 
 nav ul {
@@ -70,9 +75,9 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #2a4b9a;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
-    transition: ease-in-out 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 .search-item {
@@ -115,6 +120,8 @@ nav ul li a:hover {
     padding: 6px;
 }
 
+
+/* === SECTIONS === */
 section {
     padding: 50px;
 }
@@ -136,6 +143,8 @@ section {
     text-transform: uppercase;
 }
 
+
+/* === GALERIE === */
 .gallery {
     display: flex;
     justify-content: center;
@@ -144,6 +153,32 @@ section {
 }
 
 .project {
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 10px;
+    color: #2a4b9a;
+}
+
+.drawing {
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 10px;
+    color: #2a4b9a;
+}
+
+.painting {
     padding: 20px;
     width: 400px;
     height: 300px;
@@ -169,20 +204,51 @@ section {
 }
 
 #projet1 {
-    background-image: url('images/projet1.jpg');
+    background-image: url('images/projet1-1.jpg');
     background-size: cover;
 }
 
 #projet2 {
-    background-image: url('images/projet2.jpg');
+    background-image: url('images/projet2-1.jpg');
     background-size: cover;
 }
 
 #projet3 {
-    background-image: url('images/projet3.png');
+    background-image: url('images/projet3-1.jpg');
     background-size: cover;
 }
 
+#dessin1 {
+    background-image: url('images/dessin1-1.jpg');
+    background-size: cover;
+}
+
+#dessin2 {
+    background-image: url('images/dessin2-1.jpg');
+    background-size: cover;
+}
+
+#dessin3 {
+    background-image: url('images/dessin3-1.jpg');
+    background-size: cover;
+}
+
+#peinture1 {
+    background-image: url('images/peinture1-1.jpg');
+    background-size: cover;
+}
+
+#peinture2 {
+    background-image: url('images/peinture2-1.jpg');
+    background-size: cover;
+}
+
+#peinture3 {
+    background-image: url('images/peinture3-1.jpg');
+    background-size: cover;
+}
+
+/* === CONTACT === */
 #contact form {
     display: flex;
     flex-direction: column;
@@ -197,10 +263,6 @@ button {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-favicon.png {
-    background-color: #222;
 }
 
 .contact-flex {
@@ -232,6 +294,7 @@ favicon.png {
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 6px;
+    resize: none;
 }
 
 .contact-flex form button {
@@ -270,12 +333,41 @@ favicon.png {
     border: none;
 }
 
+
+/* === SERVICES === */
 .services-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
     margin-top: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.vr-info p {
+    display: flex;
+    margin: auto;
+    text-align: justify;
+    max-width: 42%;
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .service {
@@ -313,9 +405,7 @@ favicon.png {
 
 footer {
     background-color: #1b1e39;
-    /* bleu foncé */
     color: #ffffff;
-    /* texte blanc */
     text-align: center;
     padding: 40px 20px;
     font-family: 'Montserrat', sans-serif;
@@ -345,6 +435,8 @@ footer p {
     transform: scale(1.1);
 }
 
+
+/* === À PROPOS === */
 #about h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
@@ -414,5 +506,110 @@ footer p {
     .about-text,
     .about-image {
         flex: 1 1 100%;
+    }
+}
+
+
+/* === DÉTAIL PROJET === */
+.project-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-wrapper {
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.4s ease;
+}
+
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.slider button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1) translateY(-50%);
+}
+
+
+.slider .prev {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.slider .next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.thumbnails {
+    margin-top: 60px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.thumbnails img.thumb {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+.thumbnails img.thumb:hover,
+.thumbnails img.thumb.active {
+    border-color: #2a4b9a;
+}
+
+@media (max-width: 768px) {
+    .project-detail {
+        flex-direction: column;
+    }
+
+    .image-wrapper img {
+        width: 100%;
     }
 }

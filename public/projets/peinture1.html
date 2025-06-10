@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Appartement Montbeton</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/public/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/public/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/public/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>MH Interior - Gallerie</h1>
+        <nav>
+            <ul>
+                <li><a href="/public/index.html"
+                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
+                </li>
+                <li><a href="/public/portfolio.html">Portfolio</a></li>
+                <li><a href="/public/services.html">Services</a></li>
+                <li><a href="/public/contact.html">Contact</a></li>
+                <li><a href="/public/about.html">À propos</a></li>
+                <li class="search-item">
+                    <form id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Rechercher...">
+                        <button type="button" id="searchToggle"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 style="color:#1b1e39;">Nature morte contemporaine</h2>
+        <div class="project-detail">
+            <div class="image-wrapper">
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <img id="mainImage" src="/public/images/peinture1-1.jpg" alt="Peinture 1">
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="text-wrapper">
+                <p><strong>Date de réalisation :</strong> Date</p>
+                <p><strong>Client :</strong> Moi</p>
+                <p><strong>Services réalisés :</strong> Peinture aquarelle</p>
+                </p>
+                <p><strong>Description :</strong><br>
+                    <br>
+                    Cette peinture représente une nature morte contemporaine, mettant en avant des éléments du quotidien
+                    avec une touche artistique. Les couleurs vives et les formes abstraites créent une atmosphère
+                    dynamique et moderne.
+                </p>
+                <div class="thumbnails">
+                    <img src="/public/images/peinture1-1.jpg" class="thumb" data-index="0" alt="mini 1">
+                    <img src="/public/images/peinture1-2.jpg" class="thumb" data-index="1" alt="mini 2">
+                    <img src="/public/images/peinture1-3.jpg" class="thumb" data-index="2" alt="mini 3">
+                    <img src="/public/images/peinture1-4.jpg" class="thumb" data-index="3" alt="mini 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <img src="/public/favicon/favicon-96x96.png" alt="MH Interior Logo">
+        <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
+        <p>Suivez-moi sur les réseaux sociaux :</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
+                    <img src="/public/icons/Facebook.svg" alt="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
+                    <img src="/public/icons/Instagram.png" alt="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
+                    <img src="/public/icons/Linkedin.png" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>

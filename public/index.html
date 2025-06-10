@@ -23,7 +23,7 @@
 <body>
     <header>
         <h1>MH Interior - Accueil</h1>
-   
+
         <nav>
             <ul>
                 <li><a href="index.html"
@@ -69,13 +69,13 @@
     <section id="portfolio">
         <h2>Mes dernières réalisations</h2>
         <div class="gallery">
-            <a href="projet1.html" class="project" id="projet1">
+            <a href="projets/projet1.html" class="project" id="projet1">
                 Un appartement chaleureux - Montbeton (82)
             </a>
-            <a href="projet2.html" class="project" id="projet2">
+            <a href="projets/projet2.html" class="project" id="projet2">
                 Transformation d'une kitchenette en cuisine - Montauban (82)
             </a>
-            <a href="projet3.html" class="project" id="projet3">
+            <a href="projets/projet3.html" class="project" id="projet3">
                 Une pièce de vie contemporaine aux accents naturels - Montauban (82)
             </a>
         </div>
@@ -114,15 +114,15 @@
 
     <section id="contact">
         <h2>Contactez-moi</h2>
-        <form action="/backend/send_contact.php" method="POST" id="contactForm">
-            <input type="text" name="nom" placeholder="Votre Nom" required>
-            <input type="email" name="email" placeholder="Votre Email" required>
-            <input type="text" name="telephone" placeholder="Votre Téléphone">
-            <textarea name="message" placeholder="Votre Message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-
-
+        <div class="contact-flex">
+            <form action="/backend/send_contact.php" method="POST" id="contactForm">
+                <input type="text" name="nom" placeholder="Votre Nom" required>
+                <input type="email" name="email" placeholder="Votre Email" required>
+                <input type="text" name="telephone" placeholder="Votre Téléphone">
+                <textarea name="message" placeholder="Votre Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
     </section>
     <footer>
         <img src="favicon/favicon-96x96.png" alt="MH Interior Logo">
@@ -131,17 +131,17 @@
         <ul class="social-links">
             <li>
                 <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
-                    <img src="icons/Facebook.svg" alt="Facebook" />
+                    <img src="icons/Facebook.svg" alt="Facebook">
                 </a>
             </li>
             <li>
                 <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
-                    <img src="icons/Instagram.png" alt="Instagram" />
+                    <img src="icons/Instagram.png" alt="Instagram">
                 </a>
             </li>
             <li>
                 <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
-                    <img src="icons/Linkedin.png" alt="LinkedIn" />
+                    <img src="icons/Linkedin.png" alt="LinkedIn">
                 </a>
             </li>
         </ul>

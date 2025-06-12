@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Pièce de vie Montauban</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="/public/favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/favicon-96x96.png">
-    <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/public/favicon/site.webmanifest">
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="/public/script.js" defer></script>
+    <script src="../script.js" defer></script>
 </head>
 
 <body>
@@ -25,13 +25,13 @@
         <h1>MH Interior - Gallerie</h1>
         <nav>
             <ul>
-                <li><a href="/public/index.html"
+                <li><a href="../index.html"
                         onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
                 </li>
-                <li><a href="/public/portfolio.html">Portfolio</a></li>
-                <li><a href="/public/services.html">Services</a></li>
-                <li><a href="/public/contact.html">Contact</a></li>
-                <li><a href="/public/about.html">À propos</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../about.html">À propos</a></li>
                 <li class="search-item">
                     <form id="searchForm">
                         <input type="text" id="searchInput" placeholder="Rechercher...">
@@ -47,43 +47,86 @@
             <div class="image-wrapper">
                 <div class="slider">
                     <button class="prev">&#10094;</button>
-                    <img id="mainImage" src="/public/images/projet3-1.jpg" alt="Projet 3">
+                    <img id="mainImage" src="../images/projet3-1.jpg" alt="Projet 3">
                     <button class="next">&#10095;</button>
+                </div>
+                <div id="imageModal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="imgZoom" alt="Agrandissement">
+                </div>
+                <div class="thumbnails">
+                    <img src="../images/projet3-1.jpg" class="thumb" data-index="0" alt="mini 1">
+                    <img src="../images/projet3-2.jpg" class="thumb" data-index="1" alt="mini 2">
+                    <img src="../images/projet3-3.jpg" class="thumb" data-index="2" alt="mini 3">
+                    <img src="../images/projet3-4.jpg" class="thumb" data-index="3" alt="mini 4">
+                    <img src="../images/projet3-5.jpg" class="thumb" data-index="4" alt="mini 5">
+                    <img src="../images/projet3-6.jpg" class="thumb" data-index="5" alt="mini 6">
                 </div>
             </div>
 
             <div class="text-wrapper">
-                <p><strong>Date de réalisation :</strong> Date</p>
-                <p><strong>Client :</strong> Nom</p>
-                <p><strong>Services réalisés :</strong> Services
-                </p>
-                <p><strong>Description :</strong><br>
+                <p>
+                    <h2>Une pièce de vie élégante, Ariège</h2>
+
+                    Le cahier des charges exigeait la création un meuble TV contemporain, qui offre du rangement et la
+                    possibilité d’accueillir une télévision plus grande dans le futur. Il fallait également conserver
+                    des meubles existants et les panacher avec de nouvelles pièces de mobilier, avec un objectif :
+                    imaginer une ambiance chaleureuse et cossue, aussi élégante qu’intemporelle.<br>
+
+                    <h2>Des matériaux chics</h2>
+
+                    Notre architecte d’intérieur a associé diverses essences de bois avec différents types de textile
+                    (lin et velours). Une touche de métal noir et gold sublime cette association.<br>
                     <br>
-                    Ce projet a consisté à transformer une pièce de vie en un espace contemporain et chaleureux, avec
-                    des
-                    matériaux naturels et une palette de couleurs apaisantes. Le client souhaitait un lieu de vie
-                    fonctionnel et esthétique, propice à la détente et aux échanges familiaux.
+                    C’est ainsi que Mareva a installé un claustra en bois. Réalisé par un artisan local, il délimite la
+                    pièce de vie de la cuisine, tout en préservant la communication et la luminosité entre les deux
+                    espaces.<br>
+                    <br>
+                    Dans l’espace salle à manger, la table en bois rustique rectangulaire a été remplacée par un élégant
+                    modèle (marque Pianca) provenant de Kosmo Intérieur. Sa forme ovale fluidifie la circulation, tandis
+                    que son plateau en noyer apporte de la chaleur à l’endroit.<br>
+                    <br>
+                    Le papier peint, qui habille le mur du fond, se distingue par sa teinte nuancée de beige. Cette
+                    dernière s’accorde avec les portes de placard encastrées, qui se fondent elles-mêmes dans le mur.
+                    Cette combinaison, aussi chic que discrète, valorise la table à manger.<br>
+                    <br>
+                    Les belles suspensions existantes en bois ont été conservées dans la salle à manger. Idem pour les
+                    spots encastrés dans le salon. Mareva les a complétés de dispositifs d’ambiance, tels le luminaire
+                    Pipistrello grand format et petite lampe singe de la marque Werner Voss sur le meuble TV.<br>
+
+                    <h2>Un meuble TV sur-mesure</h2>
+
+                    À propos du meuble TV, celui-ci est l’élément phare du projet. Réalisé sur-mesure, il présente
+                    un
+                    mur de colonnes, qui intègre un élément remarquable (si l’on ose dire) : une porte en trompe-l’œil,
+                    qui dissimule l’accès vers la chambre parentale.<br>
+                    <br>
+                    Un linéaire suspendu apporte de la légèreté à cette composition tout en soulignant la future TV.
+                    Quant au meuble haut en aspect noyer, il équilibre l’ensemble avec une chaude élégance.<br>
+                    <br>
+                    Dans cette même perspective, Mareva a posé des rideaux qui s’élèvent du sol au plafond, ce qui donne
+                    par ailleurs de la hauteur à la pièce. La finition lin habille ainsi de belle manière la grande baie
+                    vitrée tout en laissant passer la lumière.<br>
+                    <br>
+                    Le magnifique buffet provenant de Cerezo s’accorde à merveille avec la décoration générale. Les
+                    canapés existants ont été disposés différemment afin de donner l’impression d’un salon plus
+                    spacieux. Les coussins, qui font contraster leurs teintes écru, vert et noir, dynamisent subtilement
+                    le lieu (en plus de faire écho aux chaises de la salle à manger).<br>
                 </p>
-                <div class="thumbnails">
-                    <img src="/public/images/projet3-1.jpg" class="thumb" data-index="0" alt="mini 1">
-                    <img src="/public/images/projet3-2.jpg" class="thumb" data-index="1" alt="mini 2">
-                    <img src="/public/images/projet3-3.jpg" class="thumb" data-index="2" alt="mini 3">
-                    <img src="/public/images/projet3-4.jpg" class="thumb" data-index="3" alt="mini 4">
-                </div>
             </div>
         </div>
     </section>
     <footer>
-        <img src="/public/favicon/favicon-96x96.png" alt="MH Interior Logo">
+        <img src="../favicon/favicon-96x96.png" alt="MH Interior Logo">
         <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
         <p>Suivez-moi sur les réseaux sociaux :</p>
         <ul class="social-links">
             <li><a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank"><img
-                        src="/public/icons/Facebook.svg" alt="Facebook"></a></li>
+                        src="../icons/Facebook.svg" alt="Facebook"></a></li>
             <li><a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank"><img
-                        src="/public/icons/Instagram.png" alt="Instagram"></a></li>
+                        src="../icons/Instagram.png" alt="Instagram"></a></li>
             <li><a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank"><img
-                        src="/public/icons/Linkedin.png" alt="LinkedIn"></a></li>
+                        src="../icons/Linkedin.png" alt="LinkedIn"></a></li>
         </ul>
     </footer>
 </body>

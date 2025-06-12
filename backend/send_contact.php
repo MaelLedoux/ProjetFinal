@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->send();
 
             // ✅ Redirection vers page de remerciement
-            header("Location: merci.html");
+            header("Location: ../public/merci.html");
             exit();
         } catch (Exception $e) {
             echo "Erreur envoi mail : " . $mail->ErrorInfo;

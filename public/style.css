@@ -7,7 +7,6 @@ body {
     color: #333;
 }
 
-
 /* === HEADER === */
 header h1 {
     color: white;
@@ -35,7 +34,6 @@ header.no-banner {
     box-shadow: #1b1e39 0 0 10px;
     transition: background-color 0.3s ease-in-out;
 }
-
 
 /* === NAVIGATION === */
 nav {
@@ -71,13 +69,17 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block;
+    transition:
+        color 0.3s ease-in-out,
+        transform 0.2s cubic-bezier(.42, 0, .58, 1);
 }
 
 nav ul li a:hover {
-    color: #2a4b9a;
-    text-decoration: underline;
+    color: #1b1e39;
+    text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease-in-out;
+    transform: scale(1.15);
 }
 
 .search-item {
@@ -145,6 +147,7 @@ section {
 
 
 /* === GALERIE === */
+
 .gallery {
     display: flex;
     justify-content: center;
@@ -162,33 +165,19 @@ section {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     margin: 10px;
-    color: #2a4b9a;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
 }
 
-.drawing {
-    padding: 20px;
-    width: 400px;
-    height: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    margin: 10px;
-    color: #2a4b9a;
-}
-
-.painting {
-    padding: 20px;
-    width: 400px;
-    height: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-    margin: 10px;
-    color: #2a4b9a;
+.project:hover {
+    box-shadow: 0 0 18px rgba(44, 62, 80, 0.14);
 }
 
 .gallery a {
@@ -203,49 +192,101 @@ section {
     text-decoration: underline;
 }
 
+/* === PROJETS === */
+
+#projet1,
+#projet2,
+#projet3,
+#projet4,
+#projet5,
+#projet6 {
+    background-size: cover;
+}
+
 #projet1 {
     background-image: url('images/projet1-1.jpg');
-    background-size: cover;
 }
 
 #projet2 {
     background-image: url('images/projet2-1.jpg');
-    background-size: cover;
 }
 
 #projet3 {
     background-image: url('images/projet3-1.jpg');
-    background-size: cover;
 }
 
-#dessin1 {
-    background-image: url('images/dessin1-1.jpg');
-    background-size: cover;
+#projet4 {
+    background-image: url('images/projet4-1.jpg');
 }
 
-#dessin2 {
-    background-image: url('images/dessin2-1.jpg');
-    background-size: cover;
+#projet5 {
+    background-image: url('images/projet5-1.jpg');
 }
 
-#dessin3 {
-    background-image: url('images/dessin3-1.jpg');
-    background-size: cover;
+#projet6 {
+    background-image: url('images/projet6-1.jpg');
 }
 
-#peinture1 {
-    background-image: url('images/peinture1-1.jpg');
-    background-size: cover;
+/* === DESSINS ET PEINTURES === */
+
+.projets-dessins-peintures,
+.projets-maquettes {
+    column-count: 3;
+    column-gap: 24px;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#peinture2 {
-    background-image: url('images/peinture2-1.jpg');
-    background-size: cover;
+.title-section {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    color: #1b1e39;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-#peinture3 {
-    background-image: url('images/peinture3-1.jpg');
-    background-size: cover;
+.dessin-peinture-project,
+.maquette-project {
+    display: block;
+    margin-bottom: 24px;
+    break-inside: avoid;
+    background: none;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dessin-peinture-project:hover,
+.maquette-project:hover {
+    box-shadow: 0 0 18px rgba(44, 62, 80, 0.14);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dessin-peinture-project img,
+.maquette-project img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+@media (max-width: 900px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        column-count: 1;
+    }
 }
 
 /* === CONTACT === */
@@ -454,7 +495,6 @@ footer p {
     padding: 20px;
     box-sizing: border-box;
     gap: 50px;
-
 }
 
 .about-text {
@@ -519,14 +559,6 @@ footer p {
     margin-top: 30px;
 }
 
-.image-wrapper img {
-    max-width: 100%;
-    width: 500px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .text-wrapper {
     flex: 1;
     font-family: 'Montserrat', sans-serif;
@@ -535,23 +567,41 @@ footer p {
     color: #333;
 }
 
+.image-wrapper {
+    width: 500px;
+    max-width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .slider {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    height: 450px;
+    max-width: 500px;
+    height: auto;
     overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+.slider img#mainImage {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+    background-color: #000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     transition: opacity 0.4s ease;
 }
-
 
 .slider button {
     position: absolute;
@@ -584,15 +634,17 @@ footer p {
 }
 
 .thumbnails {
-    margin-top: 60px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 .thumbnails img.thumb {
-    width: 80px;
-    height: auto;
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 6px;
@@ -601,15 +653,123 @@ footer p {
 
 .thumbnails img.thumb:hover,
 .thumbnails img.thumb.active {
-    border-color: #2a4b9a;
+    border-color: #1b1e39;
 }
 
-@media (max-width: 768px) {
-    .project-detail {
-        flex-direction: column;
-    }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+}
 
-    .image-wrapper img {
-        width: 100%;
-    }
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 16px #0008;
+}
+
+.close-modal {
+    position: absolute;
+    top: 35px;
+    right: 45px;
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.portfolio-categories {
+    padding: 60px 0 40px 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.portfolio-title {
+    font-size: 32px;
+    color: #1b1e39;
+    margin-bottom: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 10px;
+    color: #1b1e39;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.category-card:hover {
+    box-shadow: 0 0 18px rgba(44, 62, 80, 0.14);
+}
+
+.category-card:hover {
+    color: #2a4b9a;
+    text-decoration: underline;
+}
+
+#archi {
+    background-image: url('images/archi.jpeg');
+    background-size: cover;
+}
+
+#deco {
+    background-image: url('images/deco.jpg');
+    background-size: cover;
+}
+
+#dessins-peintures {
+    background-image: url('images/dessins-peintures.jpg');
+    background-size: cover;
+}
+
+#pros {
+    background-image: url('images/pros.jpeg');
+    background-size: cover;
+}
+
+#maquettes {
+    background-image: url('images/maquettes.jpg');
+    background-size: cover;
 }

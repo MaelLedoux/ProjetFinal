@@ -254,7 +254,6 @@ section {
     break-inside: avoid;
     background: none;
     padding: 0;
-    border-radius: 10px;
     overflow: hidden;
     margin-right: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -272,7 +271,6 @@ section {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
 

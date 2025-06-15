@@ -21,53 +21,53 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-// Barre de recherche dans le menu
-const searchToggle = document.getElementById("searchToggle");
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
+    // Barre de recherche dans le menu
+    const searchToggle = document.getElementById("searchToggle");
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
 
-if (searchToggle && searchForm && searchInput) {
-    // Ouvre/ferme la barre de recherche
-    searchToggle.addEventListener("click", function () {
-        searchForm.classList.toggle("active");
-        if (searchForm.classList.contains("active")) {
-            searchInput.focus();
-        } else {
-            searchInput.value = "";
-            // Réaffiche tous les projets quand on referme la barre
+    if (searchToggle && searchForm && searchInput) {
+        // Ouvre/ferme la barre de recherche
+        searchToggle.addEventListener("click", function () {
+            searchForm.classList.toggle("active");
+            if (searchForm.classList.contains("active")) {
+                searchInput.focus();
+            } else {
+                searchInput.value = "";
+                // Réaffiche tous les projets quand on referme la barre
+                document.querySelectorAll(".project").forEach(project => {
+                    project.style.display = "block";
+                });
+            }
+        });
+
+        // Recherche en direct
+        function filtrerProjets() {
+            const searchQuery = searchInput.value.toLowerCase().trim();
             document.querySelectorAll(".project").forEach(project => {
-                project.style.display = "block";
+                const projectText = project.textContent.toLowerCase();
+                project.style.display = projectText.includes(searchQuery) ? "block" : "none";
             });
         }
-    });
 
-    // Recherche en direct
-    function filtrerProjets() {
-        const searchQuery = searchInput.value.toLowerCase().trim();
-        document.querySelectorAll(".project").forEach(project => {
-            const projectText = project.textContent.toLowerCase();
-            project.style.display = projectText.includes(searchQuery) ? "block" : "none";
+        searchInput.addEventListener("input", filtrerProjets);
+
+        // Recherche avec la touche Entrée (sans alert)
+        searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Empêche la soumission du form
+                filtrerProjets();
+                // Tu peux aussi fermer la barre ici si tu veux :
+                // searchForm.classList.remove("active");
+            }
+        });
+
+        // Empêche la soumission classique du form
+        searchForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            filtrerProjets();
         });
     }
-
-    searchInput.addEventListener("input", filtrerProjets);
-
-    // Recherche avec la touche Entrée (sans alert)
-    searchInput.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Empêche la soumission du form
-            filtrerProjets();
-            // Tu peux aussi fermer la barre ici si tu veux :
-            // searchForm.classList.remove("active");
-        }
-    });
-
-    // Empêche la soumission classique du form
-    searchForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        filtrerProjets();
-    });
-}
 
     // Sticky nav
     const nav = document.querySelector("header nav");
@@ -212,3 +212,24 @@ if (searchToggle && searchForm && searchInput) {
         }
     }
 });
+
+// Gestion du plein écran pour les vidéos
+
+const video = document.querySelector('.video-wrapper.vertical video');
+
+// Fonctions pour adapter l'affichage en plein écran
+function handleFullscreenChange() {
+    if (document.fullscreenElement === video ||
+        document.webkitFullscreenElement === video ||
+        document.mozFullScreenElement === video ||
+        document.msFullscreenElement === video) {
+        video.style.objectFit = 'contain';
+    } else {
+        video.style.objectFit = 'cover';
+    }
+}
+
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+document.addEventListener('MSFullscreenChange', handleFullscreenChange);

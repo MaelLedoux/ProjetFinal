@@ -1,85 +1,61 @@
 <?php
-// Affiche les erreurs PHP
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHP_mailer/src/Exception.php';
-require 'PHP_mailer/src/PHPMailer.php';
-require 'PHP_mailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require_once 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Connexion MySQL
-    $host = 'localhost';
-    $dbname = 'portfolio_db';
-    $username = 'maelledoux';
-    $password = 'Tahiti$*0106';
+// Sécurisation des données reçues
+$nom = htmlspecialchars(trim($_POST['nom']));
+$email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+$telephone = htmlspecialchars(trim($_POST['telephone']));
+$sujet = htmlspecialchars(trim($_POST['sujet']));
+$message = htmlspecialchars(trim($_POST['message']));
+
+if ($nom && $email && $message) {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'contact.portfoliomh@gmail.com';
+    $mail->Password = 'sqxg xpuk pcrg zcmf';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
     try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        die("Erreur connexion base : " . $e->getMessage());
-    }
+        // Configuration de l'expéditeur et du destinataire
+        $mail->setFrom('contact.portfoliomh@gmail.com', 'MH Interior - Formulaire');
+        $mail->addReplyTo($email, $nom);
+        $mail->addAddress('contact.portfoliomh@gmail.com');
+        $mail->Subject = 'Nouveau message depuis le formulaire de contact';
 
-    // Récupération des champs
-    $nom = $_POST['nom'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $telephone = $_POST['telephone'] ?? '';
-    $message = $_POST['message'] ?? '';
+        // Corps du mail
+        $body = "<strong>Nom:</strong> $nom<br>
+                <strong>Email:</strong> $email<br>
+                <strong>Téléphone:</strong> $telephone<br>
+                <strong>Sujet:</strong> $sujet<br>
+                <strong>Message:</strong><br>$message";
 
-    // Affiche les données reçues pour test
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
+        $mail->isHTML(true);
+        $mail->Body = $body;
+        $mail->send();
 
-    // Vérifie champs requis
-    if (!empty($nom) && !empty($email) && !empty($message)) {
-        try {
-            // 💾 Enregistre dans la base (remplacement de null par '')
-            $stmt = $pdo->prepare("INSERT INTO contact_messages (nom, email, sujet, message, telephone) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$nom, $email, '', $message, $telephone]);
+        // Enregistrement en base de données
+        $stmt = $pdo->prepare("INSERT INTO contact_messages (nom, email, sujet, message, date_envoi, telephone) VALUES (?, ?, ?, ?, NOW(), ?)");
+        $stmt->execute([$nom, $email, $sujet, $message, $telephone]);
 
-            // ✉️ Envoi email via Gmail
-            $mail = new PHPMailer(true);
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'contact.portfoliomh@gmail.com';
-            $mail->Password = 'hhglqukgtebejlgp'; // Mot de passe d’application Gmail
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
-
-            $mail->setFrom('contact.portfoliomh@gmail.com', 'MH Interior');
-            $mail->addReplyTo($email, $nom); // permet de répondre à l’expéditeur
-            $mail->addAddress('contact.portfoliomh@gmail.com', 'MH Interior');
-
-            $mail->isHTML(true);
-            $mail->Subject = "Nouveau message de contact";
-            $mail->Body = "
-                <h2>Message reçu via le formulaire</h2>
-                <p><strong>Nom :</strong> " . htmlspecialchars($nom) . "</p>
-                <p><strong>Email :</strong> " . htmlspecialchars($email) . "</p>
-                <p><strong>Téléphone :</strong> " . htmlspecialchars($telephone) . "</p>
-                <p><strong>Message :</strong><br>" . nl2br(htmlspecialchars($message)) . "</p>
-            ";
-
-            $mail->send();
-
-            // ✅ Redirection vers page de remerciement
-            header("Location: ../public/merci.html");
-            exit();
-        } catch (Exception $e) {
-            echo "Erreur envoi mail : " . $mail->ErrorInfo;
-        }
-    } else {
-        echo "❌ Veuillez remplir tous les champs obligatoires (nom, email, message).";
+        header('Location: ../public/merci.html');
+        exit();
+    } catch (Exception $e) {
+        echo "Une erreur est survenue : {$mail->ErrorInfo}";
     }
 } else {
-    echo "⛔ Accès direct non autorisé.";
+    echo "Veuillez remplir tous les champs requis.";
 }
 ?>

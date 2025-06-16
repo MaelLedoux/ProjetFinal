@@ -120,11 +120,40 @@
             <h2>Contactez-moi</h2>
             <div class="contact-flex">
                 <form action="../backend/send_contact.php" method="POST" id="contactForm">
-                    <input type="text" name="nom" placeholder="Votre Nom" required>
-                    <input type="email" name="email" placeholder="Votre Email" required>
-                    <input type="text" name="telephone" placeholder="Votre Téléphone">
-                    <textarea name="message" placeholder="Votre Message" required></textarea>
-                    <button type="submit">Envoyer</button>
+                    <div id="formError" role="alert" style="color: red; margin-bottom: 10px;"></div>
+
+                    <div class="form-row">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom" placeholder="Votre nom" required aria-label="Nom">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Votre email" required
+                            aria-label="Email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="telephone">Téléphone</label>
+                        <input type="text" name="telephone" id="telephone" placeholder="Votre téléphone"
+                            aria-label="Téléphone">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="sujet">Sujet</label>
+                        <input type="text" name="sujet" id="sujet" placeholder="Sujet de votre message" required
+                            aria-label="Sujet">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Votre message ici..." required
+                            aria-label="Message"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit" aria-label="Envoyer le formulaire de contact">Envoyer</button>
+                    </div>
                 </form>
             </div>
         </section>

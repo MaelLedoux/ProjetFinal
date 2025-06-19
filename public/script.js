@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function () {
     // === VALIDATION FORMULAIRE + ENVOI FETCH ===
     const form = document.querySelector("form#contactForm");
@@ -117,7 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // === STICKY NAV ===
     const nav = document.querySelector("header nav");
-    window.addEventListener("scroll", function () {
+
+    window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
             nav.classList.add("sticky-nav");
         } else {
@@ -134,13 +133,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentPage = window.location.pathname.split("/").pop();
         let imageList = [];
         switch (currentPage) {
-            case 'projet1.html': imageList = ['../images/projet1-1.jpg','../images/projet1-2.jpg','../images/projet1-3.jpg','../images/projet1-4.jpg','../images/projet1-5.jpg','../images/projet1-6.jpg','../images/projet1-7.jpg']; break;
-            case 'projet2.html': imageList = ['../images/projet2-1.jpg','../images/projet2-2.jpg','../images/projet2-3.jpg']; break;
-            case 'projet3.html': imageList = ['../images/projet3-1.jpg','../images/projet3-2.jpg','../images/projet3-3.jpg','../images/projet3-4.jpg','../images/projet3-5.jpg','../images/projet3-6.jpg']; break;
-            case 'projet4.html': imageList = ['../images/projet4-1.jpg','../images/projet4-2.jpg','../images/projet4-3.jpg','../images/projet4-4.jpg','../images/projet4-5.jpg','../images/projet4-6.jpg']; break;
-            case 'projet5.html': imageList = ['../images/projet5-1.jpg','../images/projet5-2.jpg','../images/projet5-3.jpg','../images/projet5-4.jpg','../images/projet5-5.jpg','../images/projet5-6.jpg','../images/projet5-7.jpg']; break;
-            case 'projet6.html': imageList = ['../images/projet6-1.jpg','../images/projet6-2.jpg','../images/projet6-3.jpg','../images/projet6-4.jpg','../images/projet6-5.jpg','../images/projet6-6.jpg','../images/projet6-7.jpg','../images/projet6-8.jpg']; break;
-            default: imageList = ['../images/default.jpg'];
+            case 'projet1.html':
+                imageList = ['../images/projet1-1.jpg', '../images/projet1-2.jpg', '../images/projet1-3.jpg', '../images/projet1-4.jpg', '../images/projet1-5.jpg', '../images/projet1-6.jpg', '../images/projet1-7.jpg'];
+                break;
+            case 'projet2.html':
+                imageList = ['../images/projet2-1.jpg', '../images/projet2-2.jpg', '../images/projet2-3.jpg'];
+                break;
+            case 'projet3.html':
+                imageList = ['../images/projet3-1.jpg', '../images/projet3-2.jpg', '../images/projet3-3.jpg', '../images/projet3-4.jpg', '../images/projet3-5.jpg', '../images/projet3-6.jpg'];
+                break;
+            case 'projet4.html':
+                imageList = ['../images/projet4-1.jpg', '../images/projet4-2.jpg', '../images/projet4-3.jpg', '../images/projet4-4.jpg', '../images/projet4-5.jpg', '../images/projet4-6.jpg'];
+                break;
+            case 'projet5.html':
+                imageList = ['../images/projet5-1.jpg', '../images/projet5-2.jpg', '../images/projet5-3.jpg', '../images/projet5-4.jpg', '../images/projet5-5.jpg', '../images/projet5-6.jpg', '../images/projet5-7.jpg'];
+                break;
+            case 'projet6.html':
+                imageList = ['../images/projet6-1.jpg', '../images/projet6-2.jpg', '../images/projet6-3.jpg', '../images/projet6-4.jpg', '../images/projet6-5.jpg', '../images/projet6-6.jpg', '../images/projet6-7.jpg', '../images/projet6-8.jpg'];
+                break;
+            default:
+                imageList = ['../images/default.jpg'];
         }
 
         let currentIndex = 0;
@@ -200,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // === PLEIN ÉCRAN VIDEO ===
     const video = document.querySelector('.video-wrapper.vertical video');
+
     function handleFullscreenChange() {
         if (document.fullscreenElement === video ||
             document.webkitFullscreenElement === video ||
@@ -215,3 +228,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('mozfullscreenchange', handleFullscreenChange);
     document.addEventListener('MSFullscreenChange', handleFullscreenChange);
 });
+
+// === ANNEE du FOOTER ===
+document.getElementById("year").textContent = new Date().getFullYear();

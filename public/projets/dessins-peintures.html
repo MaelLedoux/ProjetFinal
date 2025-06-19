@@ -2,206 +2,203 @@
 <html lang="fr">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MH Interior - Dessins & peintures</title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-                rel="stylesheet">
-        <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
-        <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-        <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
-        <link rel="manifest" href="../favicon/site.webmanifest">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="../script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Interior - Dessins & peintures</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../script.js" defer></script>
 </head>
 
 <body>
-        <header>
-                <h1>MH Interior - Accueil</h1>
-                <nav>
-                        <ul>
-                                <li><a href="../index.html"
-                                                onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
-                                </li>
-                                <li><a href="../portfolio.html">Portfolio</a></li>
-                                <li><a href="../services.html">Services</a></li>
-                                <li><a href="../contact.html">Contact</a></li>
-                                <li><a href="../about.html">À propos</a></li>
-                                <li class="search-item" id="searchItem">
-                                        <form id="searchForm">
-                                                <input type="text" id="searchInput" placeholder="Rechercher...">
-                                                <button type="button" id="searchToggle">
-                                                        <i class="fa fa-search"></i>
-                                                </button>
-                                        </form>
-                                </li>
-                        </ul>
-                </nav>
-        </header>
-        <main>
-                <section class="projets-dessins-peintures">
-                        <h2>Dessins et peintures</h2>
-                        <div class="gallery-dessins">
-                                <div class="dessin-peinture-project" id="d-p1">
-                                        <img src="../images/d-p1.jpg" alt="Dessin ou peinture 1">
-                                        <p>Peinture acrylique</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p2">
-                                        <img src="../images/d-p2.jpg" alt="Dessin ou peinture 2">
-                                        <p>Peinture acrylique</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p3">
-                                        <img src="../images/d-p3.jpg" alt="Dessin ou peinture 3">
-                                        <p>Stylo noir à pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p4">
-                                        <img src="../images/d-p4.jpg" alt="Dessin ou peinture 4">
-                                        <p>Crayon à papier</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p5">
-                                        <img src="../images/d-p5.png" alt="Dessin ou peinture 5">
-                                        <p>Stylo noir à pointe fine et aquarelle</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p6">
-                                        <img src="../images/d-p6.jpg" alt="Dessin ou peinture 6">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p7">
-                                        <img src="../images/d-p7.jpg" alt="Dessin ou peinture 7">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p8">
-                                        <img src="../images/d-p8.jpg" alt="Dessin ou peinture 8">
-                                        <p>Stylo noir à pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p9">
-                                        <img src="../images/d-p9.jpg" alt="Dessin ou peinture 9">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p10">
-                                        <img src="../images/d-p10.jpg" alt="Dessin ou peinture 10">
-                                        <p>Stylo noir à pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p11">
-                                        <img src="../images/d-p11.jpg" alt="Dessin ou peinture 11">
-                                        <p>Aquarelle</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p12">
-                                        <img src="../images/d-p12.jpg" alt="Dessin ou peinture 12">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p13">
-                                        <img src="../images/d-p13.jpg" alt="Dessin ou peinture 13">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p14">
-                                        <img src="../images/d-p14.jpg" alt="Dessin ou peinture 14">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p15">
-                                        <img src="../images/d-p15.jpg" alt="Dessin ou peinture 15">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p16">
-                                        <img src="../images/d-p16.jpg" alt="Dessin ou peinture 16">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p17">
-                                        <img src="../images/d-p17.jpg" alt="Dessin ou peinture 17">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p18">
-                                        <img src="../images/d-p18.jpg" alt="Dessin ou peinture 18">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p19">
-                                        <img src="../images/d-p19.jpg" alt="Dessin ou peinture 19">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p20">
-                                        <img src="../images/d-p20.jpg" alt="Dessin ou peinture 20">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p21">
-                                        <img src="../images/d-p21.png" alt="Dessin ou peinture 21">
-                                        <p>Feutres à alcool</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p22">
-                                        <img src="../images/d-p22.jpg" alt="Dessin ou peinture 22">
-                                        <p>Aquarelle</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p23">
-                                        <img src="../images/d-p23.jpg" alt="Dessin ou peinture 23">
-                                        <p>Peinture acrylique</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p24">
-                                        <img src="../images/d-p24.jpg" alt="Dessin ou peinture 24">
-                                        <p>Aquarelle</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p25">
-                                        <img src="../images/d-p25.jpg" alt="Dessin ou peinture 25">
-                                        <p>Stylo noir pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p26">
-                                        <img src="../images/d-p26.jpg" alt="Dessin ou peinture 26">
-                                        <p>Stylo noir pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p27">
-                                        <img src="../images/d-p27.jpg" alt="Dessin ou peinture 27">
-                                        <p>Peinture acrylique</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p28">
-                                        <img src="../images/d-p28.jpg" alt="Dessin ou peinture 28">
-                                        <p>Peinture acrylique</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p29">
-                                        <img src="../images/d-p29.jpg" alt="Dessin ou peinture 29">
-                                        <p>Stylo noir pointe fine</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p30">
-                                        <img src="../images/d-p30.jpg" alt="Dessin ou peinture 30">
-                                        <p>Crayon à papier</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p31">
-                                        <img src="../images/d-p31.jpg" alt="Dessin ou peinture 31">
-                                        <p>Crayon à papier</p>
-                                </div>
-                                <div class="dessin-peinture-project" id="d-p32">
-                                        <img src="../images/d-p32.jpg" alt="Dessin ou peinture 32">
-                                        <p>Crayon à papier</p>
-                                </div>
-                        </div>
-                </section>
-        </main>
-        <footer>
-                <img src="../favicon/favicon-96x96.png" alt="MH Interior Logo">
-                <p>&copy; 2025 MH Interior - Mareva MARTY. Tous droits réservés.</p>
-                <p>Suivez-moi sur les réseaux sociaux :</p>
-                <ul class="social-links">
-                        <li>
-                                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank"
-                                        aria-label="Facebook">
-                                        <img src="../icons/Facebook.svg" alt="Facebook">
-                                </a>
-                        </li>
-                        <li>
-                                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank"
-                                        aria-label="Instagram">
-                                        <img src="../icons/Instagram.png" alt="Instagram">
-                                </a>
-                        </li>
-                        <li>
-                                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank"
-                                        aria-label="LinkedIn">
-                                        <img src="../icons/Linkedin.png" alt="LinkedIn">
-                                </a>
-                        </li>
-                </ul>
-        </footer>
+    <header>
+        <h1 class="header-title">MH Interior - Accueil</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html"
+                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
+                </li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li class="search-item" id="searchItem">
+                    <form id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Rechercher...">
+                        <button type="button" id="searchToggle">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="projets-dessins-peintures">
+            <h2 class="dessins-peintures-title">Dessins et peintures</h2>
+            <div class="gallery-dessins">
+                <div class="dessin-peinture-project" id="d-p1">
+                    <img src="../images/d-p1.jpg" alt="Dessin ou peinture 1">
+                    <p>Peinture acrylique</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p2">
+                    <img src="../images/d-p2.jpg" alt="Dessin ou peinture 2">
+                    <p>Peinture acrylique</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p3">
+                    <img src="../images/d-p3.jpg" alt="Dessin ou peinture 3">
+                    <p>Stylo noir à pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p4">
+                    <img src="../images/d-p4.jpg" alt="Dessin ou peinture 4">
+                    <p>Crayon à papier</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p5">
+                    <img src="../images/d-p5.png" alt="Dessin ou peinture 5">
+                    <p>Stylo noir à pointe fine et aquarelle</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p6">
+                    <img src="../images/d-p6.jpg" alt="Dessin ou peinture 6">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p7">
+                    <img src="../images/d-p7.jpg" alt="Dessin ou peinture 7">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p8">
+                    <img src="../images/d-p8.jpg" alt="Dessin ou peinture 8">
+                    <p>Stylo noir à pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p9">
+                    <img src="../images/d-p9.jpg" alt="Dessin ou peinture 9">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p10">
+                    <img src="../images/d-p10.jpg" alt="Dessin ou peinture 10">
+                    <p>Stylo noir à pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p11">
+                    <img src="../images/d-p11.jpg" alt="Dessin ou peinture 11">
+                    <p>Aquarelle</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p12">
+                    <img src="../images/d-p12.jpg" alt="Dessin ou peinture 12">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p13">
+                    <img src="../images/d-p13.jpg" alt="Dessin ou peinture 13">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p14">
+                    <img src="../images/d-p14.jpg" alt="Dessin ou peinture 14">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p15">
+                    <img src="../images/d-p15.jpg" alt="Dessin ou peinture 15">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p16">
+                    <img src="../images/d-p16.jpg" alt="Dessin ou peinture 16">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p17">
+                    <img src="../images/d-p17.jpg" alt="Dessin ou peinture 17">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p18">
+                    <img src="../images/d-p18.jpg" alt="Dessin ou peinture 18">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p19">
+                    <img src="../images/d-p19.jpg" alt="Dessin ou peinture 19">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p20">
+                    <img src="../images/d-p20.jpg" alt="Dessin ou peinture 20">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p21">
+                    <img src="../images/d-p21.png" alt="Dessin ou peinture 21">
+                    <p>Feutres à alcool</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p22">
+                    <img src="../images/d-p22.jpg" alt="Dessin ou peinture 22">
+                    <p>Aquarelle</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p23">
+                    <img src="../images/d-p23.jpg" alt="Dessin ou peinture 23">
+                    <p>Peinture acrylique</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p24">
+                    <img src="../images/d-p24.jpg" alt="Dessin ou peinture 24">
+                    <p>Aquarelle</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p25">
+                    <img src="../images/d-p25.jpg" alt="Dessin ou peinture 25">
+                    <p>Stylo noir pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p26">
+                    <img src="../images/d-p26.jpg" alt="Dessin ou peinture 26">
+                    <p>Stylo noir pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p27">
+                    <img src="../images/d-p27.jpg" alt="Dessin ou peinture 27">
+                    <p>Peinture acrylique</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p28">
+                    <img src="../images/d-p28.jpg" alt="Dessin ou peinture 28">
+                    <p>Peinture acrylique</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p29">
+                    <img src="../images/d-p29.jpg" alt="Dessin ou peinture 29">
+                    <p>Stylo noir pointe fine</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p30">
+                    <img src="../images/d-p30.jpg" alt="Dessin ou peinture 30">
+                    <p>Crayon à papier</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p31">
+                    <img src="../images/d-p31.jpg" alt="Dessin ou peinture 31">
+                    <p>Crayon à papier</p>
+                </div>
+                <div class="dessin-peinture-project" id="d-p32">
+                    <img src="../images/d-p32.jpg" alt="Dessin ou peinture 32">
+                    <p>Crayon à papier</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="../favicon/favicon-96x96.png" alt="MH Interior Logo">
+        <p>&copy; <span id="year"></span> MH Interior - Mareva MARTY. Tous droits réservés.</p>
+        <p>Suivez-moi sur les réseaux sociaux :</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
+                    <img src="../icons/Facebook.svg" alt="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
+                    <img src="../icons/Instagram.png" alt="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
+                    <img src="../icons/Linkedin.png" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </footer>
 </body>
 
 </html>

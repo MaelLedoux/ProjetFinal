@@ -50,7 +50,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-    <h1>📥 Messages reçus via le formulaire de contact</h1>
+    <h1>Messages reçus via le formulaire de contact</h1>
     <table>
         <thead>
             <tr>

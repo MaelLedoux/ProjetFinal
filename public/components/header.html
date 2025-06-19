@@ -6,12 +6,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="{{base}}index.html"
-               onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a></li>
-        <li><a href="{{base}}portfolio.html">Portfolio</a></li>
-        <li><a href="{{base}}services.html">Services</a></li>
-        <li><a href="{{base}}contact.html">Contact</a></li>
-        <li><a href="{{base}}about.html">À propos</a></li>
+        <li><a href="{{base}}index.html" data-nav>Accueil</a></li>
+        <li><a href="{{base}}portfolio.html" data-nav>Portfolio</a></li>
+        <li><a href="{{base}}services.html" data-nav>Services</a></li>
+        <li><a href="{{base}}contact.html" data-nav>Contact</a></li>
+        <li><a href="{{base}}about.html" data-nav>À propos</a></li>
         <li class="search-item" id="searchItem">
           <form id="searchForm">
             <input type="text" id="searchInput" placeholder="Rechercher...">

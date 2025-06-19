@@ -7,6 +7,15 @@ body {
     padding: 0;
 }
 
+main {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+main.fade-out {
+    opacity: 0;
+}
+
 /* ===========================
    === HEADER LAYOUT & STYLES ===
 =========================== */
@@ -47,6 +56,7 @@ header:not(.no-banner)::after {
     background-image: none;
     box-shadow: #1b1e39 0 0 10px;
     height: auto;
+    margin-bottom: 100px;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -964,4 +974,13 @@ footer p {
 #maquettes {
     background-image: url('images/maquettes.jpg');
     background-size: cover;
+}
+
+body.preload {
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }

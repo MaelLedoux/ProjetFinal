@@ -21,34 +21,13 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="header-title">MH Interior - Accueil</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html"
-                        onclick="if(window.location.pathname.endsWith('index.html')) location.reload();">Accueil</a>
-                </li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li class="search-item" id="searchItem">
-                    <form id="searchForm">
-                        <input type="text" id="searchInput" placeholder="Rechercher...">
-                        <button type="button" id="searchToggle">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </form>
-                </li>
-
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     <main>
         <section id="home">
             <div class="intro">
-                <h2 class="intro-title">mareva marty, votre architecte d'intérieur <br><br>décoratrice à montauban</h2><br>
-                <hr style="width: 30%; position: relative; right: 35%;">
+                <h2 class="intro-title">mareva marty, votre architecte d'intérieur <br><br>décoratrice à montauban</h2>
+                <br>
+                <hr>
                 <br>
                 Métamorphoser vos espaces afin de créer une bulle de bien-être dans votre vie : telle est mon ambition à
                 vos
@@ -68,19 +47,8 @@
 
         <section id="portfolio">
             <h2>Mes dernières réalisations</h2>
-            <div class="gallery">
-                <a href="projets/projet1.html" class="project" id="projet1">
-                    Un appartement chaleureux - Montbeton (82)
-                </a>
-                <a href="projets/projet2.html" class="project" id="projet2">
-                    Transformation d'une kitchenette en cuisine - Montauban (82)
-                </a>
-                <a href="projets/projet3.html" class="project" id="projet3">
-                    Une pièce de vie contemporaine aux accents naturels - Montauban (82)
-                </a>
-            </div>
+            <div class="gallery"></div>
         </section>
-
 
         <section id="services">
             <h2>Mes services</h2>
@@ -157,28 +125,7 @@
             </div>
         </section>
     </main>
-    <footer>
-        <img src="favicon/favicon-96x96.png" alt="MH Interior Logo">
-        <p>&copy; <span id="year"></span> MH Interior - Mareva MARTY. Tous droits réservés.</p>
-        <p>Suivez-moi sur les réseaux sociaux :</p>
-        <ul class="social-links">
-            <li>
-                <a href="https://www.facebook.com/profile.php?id=100085130242795" target="_blank" aria-label="Facebook">
-                    <img src="icons/Facebook.svg" alt="Facebook">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/mareva.mhinterior.montauban/" target="_blank" aria-label="Instagram">
-                    <img src="icons/Instagram.png" alt="Instagram">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/mareva-marty-a524bb161/" target="_blank" aria-label="LinkedIn">
-                    <img src="icons/Linkedin.png" alt="LinkedIn">
-                </a>
-            </li>
-        </ul>
-    </footer>
+    <div id="footer-placeholder"></div>
 </body>
 
 </html>

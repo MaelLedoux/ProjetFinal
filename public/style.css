@@ -585,10 +585,14 @@ button {
     width: 100%;
 }
 
-
 .video-wrapper.horizontal {
     aspect-ratio: 16 / 9;
     max-width: 800px;
+}
+
+video.fullscreen-contain {
+    object-fit: contain;
+    background-color: black;
 }
 
 .horizontal iframe {

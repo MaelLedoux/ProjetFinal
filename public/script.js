@@ -11,26 +11,80 @@ function initPage(pathname) {
     const pageName = cleanPath.split("/").pop() || "index.html";
 
     const pageMeta = {
-        "index.html": { titre: "MH Interior - Accueil", bannerClass: "" },
-        "about.html": { titre: "MH Interior - À propos", bannerClass: "no-banner" },
-        "contact.html": { titre: "MH Interior - Contact", bannerClass: "" },
-        "portfolio.html": { titre: "MH Interior - Portfolio", bannerClass: "" },
-        "services.html": { titre: "MH Interior - Services", bannerClass: "" },
-        "merci.html": { titre: "MH Interior - Merci !", bannerClass: "no-banner" },
-        "projet1.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "projet2.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "projet3.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "projet4.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "projet5.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "projet6.html": { titre: "MH Interior - Gallerie", bannerClass: "" },
-        "archi.html": { titre: "MH Interior - Architecture d'intérieur", bannerClass: "" },
-        "deco.html": { titre: "MH Interior - Décoration d'intérieur", bannerClass: "" },
-        "dessins-peintures.html": { titre: "MH Interior - Dessins & peintures", bannerClass: "" },
-        "maquettes.html": { titre: "MH Interior - Maquettes", bannerClass: "" },
-        "pros.html": { titre: "MH Interior - Projets professionnels", bannerClass: "" }
+        "index.html": {
+            titre: "MH Interior - Accueil",
+            bannerClass: ""
+        },
+        "about.html": {
+            titre: "MH Interior - À propos",
+            bannerClass: "no-banner"
+        },
+        "contact.html": {
+            titre: "MH Interior - Contact",
+            bannerClass: ""
+        },
+        "portfolio.html": {
+            titre: "MH Interior - Portfolio",
+            bannerClass: ""
+        },
+        "services.html": {
+            titre: "MH Interior - Services",
+            bannerClass: ""
+        },
+        "merci.html": {
+            titre: "MH Interior - Merci !",
+            bannerClass: "no-banner"
+        },
+        "projet1.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "projet2.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "projet3.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "projet4.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "projet5.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "projet6.html": {
+            titre: "MH Interior - Gallerie",
+            bannerClass: ""
+        },
+        "archi.html": {
+            titre: "MH Interior - Architecture d'intérieur",
+            bannerClass: ""
+        },
+        "deco.html": {
+            titre: "MH Interior - Décoration d'intérieur",
+            bannerClass: ""
+        },
+        "dessins-peintures.html": {
+            titre: "MH Interior - Dessins & peintures",
+            bannerClass: ""
+        },
+        "maquettes.html": {
+            titre: "MH Interior - Maquettes",
+            bannerClass: ""
+        },
+        "pros.html": {
+            titre: "MH Interior - Projets professionnels",
+            bannerClass: ""
+        }
     };
 
-    const meta = pageMeta[pageName] || { titre: "MH Interior", bannerClass: "" };
+    const meta = pageMeta[pageName] || {
+        titre: "MH Interior",
+        bannerClass: ""
+    };
     document.title = meta.titre;
 
     fetch(cleanPath)
@@ -159,19 +213,42 @@ function reinitAll(basePath) {
     attachSearchEvents();
     attachHoverAnimations();
     initSlider();
-    injectRandomProjectsIfNeeded();
+    injectRandomProjects();
     initFullscreenVideo();
     initFormHandler(basePath);
 }
 
 function injectRandomProjects() {
-    const projets = [
-        { url: "projets/projet1.html", titre: "Un appartement chaleureux - Montbeton (82)", image: "images/projet1-1.jpg" },
-        { url: "projets/projet2.html", titre: "Transformation kitchenette - Montauban (82)", image: "images/projet2-1.jpg" },
-        { url: "projets/projet3.html", titre: "Pièce de vie contemporaine - Montauban (82)", image: "images/projet3-1.jpg" },
-        { url: "projets/projet4.html", titre: "Transformation d'un local en salle de séminaire - Montauban(82)", image: "images/projet4-1.jpg" },
-        { url: "projets/projet5.html", titre: "Transformation d'une ancienne cuisine - Montricoux (82)", image: "images/projet5-1.jpg" },
-        { url: "projets/projet6.html", titre: "Agencement d'une mezzanine - Nerac (47)", image: "images/projet6-1.jpg" },
+    const projets = [{
+            url: "projets/projet1.html",
+            titre: "Un appartement chaleureux - Montbeton (82)",
+            image: "images/projet1-1.jpg"
+        },
+        {
+            url: "projets/projet2.html",
+            titre: "Transformation kitchenette - Montauban (82)",
+            image: "images/projet2-1.jpg"
+        },
+        {
+            url: "projets/projet3.html",
+            titre: "Pièce de vie contemporaine - Montauban (82)",
+            image: "images/projet3-1.jpg"
+        },
+        {
+            url: "projets/projet4.html",
+            titre: "Transformation d'un local en salle de séminaire - Montauban(82)",
+            image: "images/projet4-1.jpg"
+        },
+        {
+            url: "projets/projet5.html",
+            titre: "Transformation d'une ancienne cuisine - Montricoux (82)",
+            image: "images/projet5-1.jpg"
+        },
+        {
+            url: "projets/projet6.html",
+            titre: "Agencement d'une mezzanine - Nerac (47)",
+            image: "images/projet6-1.jpg"
+        },
     ];
 
     const projetsAleatoires = projets.sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -301,20 +378,18 @@ function initSlider() {
 }
 
 function initFullscreenVideo() {
-    const video = document.querySelector('.video-wrapper.vertical video');
+    const video = document.querySelector('.vertical video');
     if (!video) return;
 
     function handleFullscreenChange() {
-        if (
+        const isFullscreen = !!(
             document.fullscreenElement === video ||
             document.webkitFullscreenElement === video ||
             document.mozFullScreenElement === video ||
             document.msFullscreenElement === video
-        ) {
-            video.style.objectFit = 'contain';
-        } else {
-            video.style.objectFit = 'cover';
-        }
+        );
+
+        video.classList.toggle('fullscreen-contain', isFullscreen);
     }
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);

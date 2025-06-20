@@ -160,7 +160,7 @@ function enableSpaNavigation() {
 function initFormHandler(basePath) {
     const form = document.querySelector("form#contactForm");
     if (form) {
-        const actionPath = basePath + "backend/send_contact.php";
+        const actionPath = "../backend/send_contact.php";
         form.setAttribute("action", actionPath);
 
         form.addEventListener("submit", async (e) => {
@@ -195,11 +195,13 @@ function initFormHandler(basePath) {
                     method: "POST",
                     body: formData
                 });
-                if (response.redirected) {
-                    window.location.href = response.url;
+
+                const result = await response.json();
+
+                if (result.success) {
+                    window.location.href = basePath + "merci.html"; // redirection manuelle propre
                 } else {
-                    const text = await response.text();
-                    if (errorBox) errorBox.textContent = text;
+                    if (errorBox) errorBox.textContent = result.error || "Une erreur est survenue.";
                 }
             } catch (err) {
                 if (errorBox) errorBox.textContent = "Erreur d'envoi. Veuillez réessayer.";
@@ -213,7 +215,6 @@ function reinitAll(basePath) {
     attachSearchEvents();
     attachHoverAnimations();
     initSlider();
-    injectRandomProjects();
     initFullscreenVideo();
     initFormHandler(basePath);
 }
@@ -262,10 +263,8 @@ function injectRandomProjects() {
             a.href = projet.url;
             a.classList.add("project");
             a.style.backgroundImage = `url(${projet.image})`;
-
             const span = document.createElement("span");
             span.textContent = projet.titre;
-
             a.appendChild(span);
             galerie.appendChild(a);
         });

@@ -160,7 +160,7 @@ function enableSpaNavigation() {
 function initFormHandler(basePath) {
     const form = document.querySelector("form#contactForm");
     if (form) {
-        const actionPath = "../backend/send_contact.php";
+        const actionPath = "http://localhost:8000/api/contact";
         form.setAttribute("action", actionPath);
 
         form.addEventListener("submit", async (e) => {
@@ -189,17 +189,27 @@ function initFormHandler(basePath) {
                 return;
             }
 
-            const formData = new FormData(form);
+            const data = {
+                nom,
+                email,
+                telephone,
+                sujet,
+                message
+            };
+
             try {
                 const response = await fetch(actionPath, {
                     method: "POST",
-                    body: formData
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
                 });
 
                 const result = await response.json();
 
                 if (result.success) {
-                    window.location.href = basePath + "merci.html"; // redirection manuelle propre
+                    window.location.href = basePath + "merci.html";
                 } else {
                     if (errorBox) errorBox.textContent = result.error || "Une erreur est survenue.";
                 }

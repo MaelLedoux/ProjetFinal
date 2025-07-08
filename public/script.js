@@ -160,7 +160,7 @@ function enableSpaNavigation() {
 function initFormHandler(basePath) {
     const form = document.querySelector("form#contactForm");
     if (form) {
-        const actionPath = "http://localhost:8000/api/contact";
+        const actionPath = "http://localhost:8001/api/contact";
         form.setAttribute("action", actionPath);
 
         form.addEventListener("submit", async (e) => {

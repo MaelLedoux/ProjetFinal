@@ -409,14 +409,16 @@ section {
     width: 100%;
 }
 
-.dessin-peinture-project p {
+.dessin-peinture-project p,
+.maquette-project p {
     display: none;
     height: auto;
     margin: 0;
     width: 100%;
 }
 
-.dessin-peinture-project:hover p {
+.dessin-peinture-project:hover p,
+.maquette-project:hover p {
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
     color: white;
@@ -428,8 +430,6 @@ section {
     right: 0;
     text-align: center;
 }
-
-
 
 @media (max-width: 900px) {
     .gallery {

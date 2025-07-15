@@ -1,3 +1,16 @@
+# Symfony
+/var/
+/vendor/
+/.env.local
+.env.*.local
+.env.test
+/phpunit.xml
+/phpunit.xml.dist
+node_modules/
+build/
+*.log
+*.cache
+
 # système
 .DS_Store
 Thumbs.db

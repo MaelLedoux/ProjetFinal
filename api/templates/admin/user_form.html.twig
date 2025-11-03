@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ is_edit ? 'Modifier utilisateur' : 'Nouvel utilisateur' }}{% endblock %}
+
+{% block body %}
+<div class="card">
+    <h2 style="margin:0 0 1rem 0;">{{ is_edit ? 'Modifier utilisateur' : 'Nouvel utilisateur' }}</h2>
+
+    {# users_form.html.twig #}
+    {{ form_start(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.roles) }}
+
+    {# Ne rendre le champ que s'il existe dans le FormType #}
+    {% if form.plainPassword is defined %}
+    {{ form_row(form.plainPassword) }}
+    {% endif %}
+
+    <div class="table-actions" style="margin-top:1rem;">
+        <a class="btn ghost" href="{{ path('admin_users') }}">Annuler</a>
+        <button class="btn" type="submit">{{ is_edit ? 'Enregistrer' : 'Créer' }}</button>
+    </div>
+    {{ form_end(form) }}
+
+</div>
+{% endblock %}

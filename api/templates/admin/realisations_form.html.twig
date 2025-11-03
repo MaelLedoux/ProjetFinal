@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ is_edit is defined and is_edit ? 'Modifier la réalisation' : 'Ajouter une réalisation' }}{% endblock %}
+
+{% block body %}
+<div class="card">
+  <h2 style="margin-top:0;">{{ is_edit is defined and is_edit ? 'Modifier la réalisation' : 'Ajouter une réalisation' }}</h2>
+
+  {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+    {{ form_row(form.type) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.image) }}
+
+    <div class="stack" style="margin-top:1rem;justify-content:flex-end;">
+      <a class="btn ghost" href="{{ path('admin_realisations') }}">Annuler</a>
+      <button type="submit" class="btn">{{ is_edit is defined and is_edit ? 'Mettre à jour' : 'Ajouter' }}</button>
+    </div>
+  {{ form_end(form) }}
+</div>
+{% endblock %}

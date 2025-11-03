@@ -1,0 +1,17 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+admin_login:
+    path: /admin/login
+    controller: App\Controller\SecurityController::login
+
+admin_logout:
+    path: /admin/logout
+    controller: App\Controller\SecurityController::logout
+
+admin_dashboard:
+    path: /admin/dashboard
+    controller: App\Controller\AdminController::dashboard

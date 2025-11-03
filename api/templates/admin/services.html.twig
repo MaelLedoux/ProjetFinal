@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gestion des services{% endblock %}
+
+{% block body %}
+<div class="card">
+  <h2 style="margin:0;">Services</h2>
+</div>
+
+<table class="table-admin">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Média</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for s in services %}
+    <tr>
+      <td data-label="Titre">{{ s.titre }}</td>
+      <td data-label="Type">{{ s.type }}</td>
+      <td data-label="Description">{{ s.description ? (s.description|length > 140 ? s.description|slice(0,140) ~ '…' : s.description) : '—' }}</td>
+      <td data-label="Média">
+        {% if s.video %}
+          {% if s.video starts with 'http' %}
+            <div style="position:relative;width:100%;padding-bottom:56.25%;">
+              <iframe src="{{ s.video }}" allowfullscreen style="position:absolute;inset:0;border:0;width:100%;height:100%"></iframe>
+            </div>
+          {% else %}
+            <video src="{{ asset('../' ~ s.video) }}" controls muted style="max-width:100%;height:auto;border-radius:8px">
+              Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+          {% endif %}
+        {% else %}
+          <em class="muted">Aucun média</em>
+        {% endif %}
+      </td>
+    </tr>
+  {% else %}
+    <tr><td data-label="Info" colspan="4"><em class="muted">Aucun service enregistré.</em></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tableau de bord — Admin{% endblock %}
+
+{% block body %}
+<div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+  <div>
+    <h2 style="margin:0;">Bienvenue {{ app.user.username|capitalize }}</h2>
+    <p class="muted" style="margin:.25rem 0 0 0;">Vous êtes connectée à l’espace d’administration.</p>
+  </div>
+  <a class="btn ghost" href="{{ path('admin_logout') }}">Déconnexion</a>
+</div>
+
+<div class="card">
+  <p style="margin:0;">Utilisez la navigation ci-dessus pour gérer les <strong>Projets</strong>, <strong>Réalisations</strong>, <strong>Services</strong>{% if is_granted('ROLE_ADMIN') %} et <strong>Messages</strong>{% endif %}.</p>
+</div>
+{% endblock %}

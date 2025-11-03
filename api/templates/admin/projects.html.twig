@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gestion des projets{% endblock %}
+
+{% block body %}
+<div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+  <h2 style="margin:0;">Projets</h2>
+  {% if is_granted('ROLE_EDITOR') %}
+    <a href="{{ path('admin_project_add') }}" class="btn">➕ Ajouter un projet</a>
+  {% endif %}
+</div>
+
+{% for message in app.flashes('success') %}
+  <div class="card" style="background:#dff0d8;color:#2a5b2e;border-color:#cbe7c7">✔ {{ message }}</div>
+{% endfor %}
+
+<table class="table-admin">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th>Image</th>
+      <th>Page</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for project in projects %}
+    <tr>
+      <td data-label="Titre">{{ project.titre }}</td>
+      <td data-label="Contenu">
+        {{ project.contenuHtml|striptags|length > 120
+          ? project.contenuHtml|striptags|slice(0,120) ~ '…'
+          : project.contenuHtml|striptags }}
+      </td>
+      <td data-label="Image">
+        {% if project.imagePrincipale %}
+          <img class="table-thumb" src="{{ frontend_url ~ '/' ~ project.imagePrincipale }}" alt="Image projet">
+        {% else %}
+          <em class="muted">Aucune image</em>
+        {% endif %}
+      </td>
+      <td data-label="Page">
+        {% if project.lien %}
+          <a href="{{ frontend_url ~ '/' ~ project.lien }}" target="_blank">Voir</a>
+        {% else %}
+          <em class="muted">—</em>
+        {% endif %}
+      </td>
+      <td data-label="Actions">
+        <div class="table-actions">
+          {% if is_granted('ROLE_EDITOR') %}
+            <a href="{{ path('admin_project_edit', { id: project.id }) }}" class="btn ghost">✏️ Modifier</a>
+          {% endif %}
+          {% if is_granted('ROLE_ADMIN') %}
+            <form method="post" action="{{ path('admin_project_delete', {id: project.id}) }}" onsubmit="return confirm('Supprimer ce projet ?');">
+              <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ project.id) }}">
+              <button type="submit" class="btn ghost">🗑️ Supprimer</button>
+            </form>
+          {% endif %}
+        </div>
+      </td>
+    </tr>
+  {% else %}
+    <tr><td data-label="Info" colspan="5"><em class="muted">Aucun projet trouvé.</em></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

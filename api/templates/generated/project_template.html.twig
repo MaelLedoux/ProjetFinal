@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titre }}</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main>
+    <section>
+        <h2 style="color:#1b1e39;">{{ titre }}</h2>
+        <div class="project-detail">
+            <div class="image-wrapper">
+                <div class="slider">
+                    <button class="prev">&#10094;</button>
+                    <img id="mainImage" src="../{{ images[0] }}" alt="Image principale">
+                    <button class="next">&#10095;</button>
+                </div>
+                <div id="imageModal" class="modal">
+                    <span class="close-modal">&times;</span>
+                    <img class="modal-content" id="imgZoom" alt="Zoom">
+                </div>
+                <div class="thumbnails">
+                    {% for image in images %}
+                        <img src="../{{ image }}" class="thumb" data-index="{{ loop.index0 }}" alt="mini {{ loop.index }}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="text-wrapper">
+                {{ description|raw }}
+            </div>
+        </div>
+    </section>
+</main>
+<div id="footer-placeholder"></div>
+</body>
+</html>

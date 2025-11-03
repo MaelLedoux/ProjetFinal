@@ -1,0 +1,12 @@
+parameters:
+    project_dir: '%kernel.project_dir%'
+    frontend_url: 'http://localhost:8000'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+

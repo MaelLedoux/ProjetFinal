@@ -1,0 +1,39 @@
+# config/packages/security.yaml
+security:
+  role_hierarchy:
+    ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_EDITOR]
+    ROLE_ADMIN: [ROLE_EDITOR]
+
+  providers:
+    app_user_provider:
+      entity:
+        class: App\Entity\User
+        property: username
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    main:
+      lazy: true
+      provider: app_user_provider
+      form_login:
+        login_path: admin_login
+        check_path: admin_login
+        default_target_path: /admin/dashboard
+        # username_parameter: username   # (optionnel si ton input s'appelle bien "username")
+        # password_parameter: password   # (par défaut)
+      logout:
+        path: admin_logout
+        target: /admin/login
+
+  access_control:
+    - { path: ^/admin/login, roles: PUBLIC_ACCESS }
+    # Laisse l'accès général du back-office aux éditeurs ;
+    # les actions sensibles sont verrouillées dans les contrôleurs par #[IsGranted('ROLE_ADMIN')]
+    - { path: ^/admin, roles: ROLE_EDITOR }
+
+  password_hashers:
+    App\Entity\User:
+      algorithm: auto

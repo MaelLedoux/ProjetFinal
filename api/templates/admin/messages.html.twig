@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Messages reçus{% endblock %}
+
+{% block body %}
+<div class="card">
+  <h2 style="margin:0;">Messages</h2>
+</div>
+
+{% for message in messages %}
+  <div class="card">
+    <p><strong>Nom :</strong> {{ message.name }}</p>
+    <p><strong>Email :</strong> <a href="mailto:{{ message.email }}">{{ message.email }}</a></p>
+    <p><strong>Sujet :</strong> {{ message.sujet }}</p>
+    <p><strong>Téléphone :</strong> {{ message.telephone ?? 'Non renseigné' }}</p>
+    <p><strong>Reçu le :</strong> {{ message.createdAt|date('d/m/Y H:i') }}</p>
+    <p><strong>Message :</strong><br>{{ message.message|nl2br }}</p>
+
+    {% if is_granted('ROLE_ADMIN') %}
+      <form method="post" action="{{ path('admin_message_delete', { id: message.id }) }}" onsubmit="return confirm('Supprimer ce message ?')">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ message.id) }}">
+        <button type="submit" class="btn ghost">🗑️ Supprimer</button>
+      </form>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="card"><em class="muted">Aucun message reçu.</em></div>
+{% endfor %}
+{% endblock %}

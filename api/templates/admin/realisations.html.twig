@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gestion des réalisations{% endblock %}
+
+{% block body %}
+<div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+  <h2 style="margin:0;">Réalisations</h2>
+  {% if is_granted('ROLE_EDITOR') %}
+    <a class="btn" href="{{ path('admin_realisation_add') }}">➕ Ajouter</a>
+  {% endif %}
+</div>
+
+{% for message in app.flashes('success') %}
+  <div class="card" style="background:#dff0d8;color:#2a5b2e;border-color:#cbe7c7">✔ {{ message }}</div>
+{% endfor %}
+
+<table class="table-admin">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in realisations %}
+    <tr>
+      <td data-label="Type">{{ r.type|capitalize }}</td>
+      <td data-label="Description">{{ r.description ? (r.description|length > 120 ? r.description|slice(0,120) ~ '…' : r.description) : '—' }}</td>
+      <td data-label="Image">
+        {% if r.image %}
+          <img class="table-thumb" src="{{ frontend_url }}/images/{{ r.image }}" alt="Réalisation">
+        {% else %}
+          <em class="muted">Aucune image</em>
+        {% endif %}
+      </td>
+      <td data-label="Actions">
+        <div class="table-actions">
+          {% if is_granted('ROLE_ADMIN') %}
+            <form method="post" action="{{ path('admin_realisation_delete', {id: r.id}) }}" onsubmit="return confirm('Supprimer cette réalisation ?');">
+              <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ r.id) }}">
+              <button class="btn ghost" type="submit">🗑️ Supprimer</button>
+            </form>
+          {% else %}
+            <span class="muted">—</span>
+          {% endif %}
+        </div>
+      </td>
+    </tr>
+  {% else %}
+    <tr><td data-label="Info" colspan="4"><em class="muted">Aucune réalisation trouvée.</em></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ is_edit ? 'Modifier le projet' : 'Ajouter un projet' }}{% endblock %}
+
+{% block stylesheets %}
+  {# Éditeur Trix si tu l’utilises #}
+  <link rel="stylesheet" href="{{ asset('assets/trix/trix.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ asset('assets/trix/trix.umd.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="card">
+  <h2 style="margin-top:0;">{{ is_edit ? 'Modifier le projet' : 'Ajouter un projet' }}</h2>
+
+  {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+    {{ form_row(form.titre) }}
+    {{ form_row(form.imagePrincipale) }}
+    {{ form_row(form.imagesAnnexes) }}
+
+    {# Contenu HTML riche #}
+    <label for="contenu_html">Contenu du projet</label>
+    <input id="contenu_html" type="hidden" name="{{ form.contenuHtml.vars.full_name }}" value="{{ form.contenuHtml.vars.value|e('html_attr') }}">
+    <trix-editor input="contenu_html"></trix-editor>
+    {% do form.contenuHtml.setRendered() %}
+
+    {{ form_rest(form) }}
+
+    <div class="stack" style="margin-top:1rem;justify-content:flex-end;">
+      <a class="btn ghost" href="{{ path('admin_projects') }}">Annuler</a>
+      <button type="submit" class="btn">{{ is_edit ? 'Mettre à jour' : 'Ajouter' }}</button>
+    </div>
+  {{ form_end(form) }}
+</div>
+{% endblock %}

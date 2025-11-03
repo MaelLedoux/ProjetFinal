@@ -1,0 +1,27 @@
+<nav class="admin-nav">
+    <div class="nav-grid">
+        <a class="nav-link{{ app.request.attributes.get('_route') starts with 'admin_projects' ? ' active' }}"
+            href="{{ path('admin_projects') }}">Projets</a>
+        <a class="nav-link{{ app.request.attributes.get('_route') starts with 'admin_realisations' ? ' active' }}"
+            href="{{ path('admin_realisations') }}">Réalisations</a>
+        <a class="nav-link{{ app.request.attributes.get('_route') starts with 'admin_services' ? ' active' }}"
+            href="{{ path('admin_services') }}">Services</a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="nav-link{{ app.request.attributes.get('_route') starts with 'admin_messages' ? ' active' }}"
+            href="{{ path('admin_messages') }}">Messages</a>
+        {% endif %}
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a class="nav-link{{ app.request.attributes.get('_route') starts with 'admin_users' ? ' active' }}"
+            href="{{ path('admin_users') }}">Utilisateurs</a>
+        {% endif %}
+    </div>
+
+    {% if app.user %}
+    <div class="nav-actions">
+        <a href="{{ path('admin_dashboard') }}" class="btn ghost">Accueil admin</a>
+        <a href="{{ path('admin_logout') }}" class="btn ghost">Déconnexion</a>
+    </div>
+    {% endif %}
+</nav>

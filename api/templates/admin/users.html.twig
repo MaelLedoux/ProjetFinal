@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}Utilisateurs — Admin{% endblock %}
+
+{% block body %}
+<div class="card" style="display:flex;justify-content:space-between;align-items:center;">
+  <h2 style="margin:0;">Utilisateurs</h2>
+  <a class="btn" href="{{ path('admin_user_new') }}">➕ Nouvel utilisateur</a>
+</div>
+
+{% for msg in app.flashes('success') %}
+  <div class="card" style="background:#dff0d8;color:#2a5b2e;">✔ {{ msg }}</div>
+{% endfor %}
+{% for msg in app.flashes('error') %}
+  <div class="card" style="background:#fde2e1;color:#7a1e1a;">⨯ {{ msg }}</div>
+{% endfor %}
+
+<table class="table-admin">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Identifiant</th>
+      <th>Rôles</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for u in users %}
+    <tr>
+      <td data-label="ID">{{ u.id }}</td>
+      <td data-label="Identifiant">{{ u.username }}</td>
+      <td data-label="Rôles">
+        {% for r in u.roles %}
+          <code>{{ r }}</code>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </td>
+      <td data-label="Actions">
+        <div class="table-actions">
+          <a class="btn ghost" href="{{ path('admin_user_edit', {id: u.id}) }}">✏️ Modifier</a>
+          <form method="post" action="{{ path('admin_user_delete', {id: u.id}) }}" onsubmit="return confirm('Supprimer cet utilisateur ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete_user_' ~ u.id) }}">
+            <button type="submit" class="btn ghost">🗑️ Supprimer</button>
+          </form>
+        </div>
+      </td>
+    </tr>
+  {% else %}
+    <tr><td data-label="Info" colspan="4"><em class="muted">Aucun utilisateur.</em></td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

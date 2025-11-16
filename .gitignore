@@ -4,6 +4,7 @@ api/vendor/
 api/.env.local
 api/.env.*.local
 api/.env.test
+api/.phpunit.cache/
 api/phpunit.xml
 api/phpunit.xml.dist
 

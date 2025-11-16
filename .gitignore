@@ -1,15 +1,11 @@
-# Symfony
-/var/
-/vendor/
-/.env.local
-.env.*.local
-.env.test
-/phpunit.xml
-/phpunit.xml.dist
-node_modules/
-build/
-*.log
-*.cache
+# Symfony (dans api/)
+api/var/
+api/vendor/
+api/.env.local
+api/.env.*.local
+api/.env.test
+api/phpunit.xml
+api/phpunit.xml.dist
 
 # système
 .DS_Store
